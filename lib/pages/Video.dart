@@ -1,89 +1,77 @@
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
+import 'package:taskwanku1/pages/Video%20Player.dart';
 
-class MyVideoPlayer extends StatefulWidget {
-  const MyVideoPlayer({Key? key}) : super(key: key);
-
-  @override
-  _MyVideoPlayerState createState() => _MyVideoPlayerState();
-}
-
-class _MyVideoPlayerState extends State<MyVideoPlayer> {
-  VideoPlayerController? controller;
-
-
-  String asset = "assets/google.mp4";
-
-  @override
-  void initState() {
-    super.initState();
-    controller = VideoPlayerController.asset(asset)
-      ..initialize().then((_) {
-        setState(() {});
-      });
-
-    controller!.play();
-  }
-
-  @override
-  void dispose() {
-    controller!.dispose();
-    super.dispose();
-  }
-
+class Video extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          body: Padding(
-            padding: const EdgeInsets.all(10.0),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Expanded(
+        child: SafeArea(
             child: Column(
-              children: [
-                Container(),
-                controller!.value.isInitialized
-                    ? AspectRatio(
-                  aspectRatio: controller!.value.aspectRatio,
-                  child: VideoPlayer(controller!),
-                )
-                    : Container(
-                  height: 200,
-                  width: double.infinity,
-                  child: const Center(
-                    child: CircularProgressIndicator(),
-                  ),
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 10, 8, 0),
+              child: Container(
+                width: double.maxFinite,
+                height: 70.0,
+                decoration: const BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
-                const SizedBox(
-                  height: 0,
-                ),
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      if (controller!.value.isPlaying) {
-                        controller!.pause();
-                      } else {
-                        controller!.play();
-                      }
-                    });
-                  },
-                  icon: controller!.value.isPlaying
-                      ? Icon(Icons.pause)
-                      : Icon(Icons.play_arrow),
-                ),
-                Slider(
-                    value: controller!.value.position.inSeconds.toDouble(),
-                    min: 0,
-                    max: controller!.value.duration.inSeconds.toDouble(),
-                    onChanged: (double value) {
-                      setState(() {
-                        controller?.seekTo(Duration(seconds: value.toInt()));
-                      });
-                    })
-              ],
+                child: const Center(
+                    child: Text(
+                  "Video",
+                  style: TextStyle(fontSize: 30, color: Colors.orange),
+                )),
+              ),
             ),
-          ),
-        ),
+            Container(
+              margin: EdgeInsets.only(left: 10, right: 10, top: 30),
+              child: Column(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 10,
+                    margin: EdgeInsets.all(10),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      elevation: 10,
+                      child: Center(
+                        child: Column(
+                          children: [
+                            ListTile(
+                              selected: false,
+                              title: const Text(
+                                "Amphibi",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              trailing: IconButton(
+                                onPressed: () {
+                                  String asset = "assets/google.mp4";
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => VideoPlayerDialog()
+                                  );
+                                },
+                                icon: const Icon(Icons.play_arrow_rounded),
+                                iconSize: 50.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )),
       ),
     );
   }

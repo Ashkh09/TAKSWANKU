@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
             : _selectedIndex == 2
             ? Identifikasi()
             : _selectedIndex == 3
-            ? const MyVideoPlayer()
+            ?  Video()
             : _selectedIndex == 4
             ? Test()
             : const Text("data"),
