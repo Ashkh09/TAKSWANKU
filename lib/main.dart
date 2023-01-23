@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskwanku1/splash_screen.dart';
 import './pages/Beranda.dart';
 import './pages/Identifikasi.dart';
 import './pages/Test.dart';
@@ -12,9 +13,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-    );
+    return MaterialApp(home: Scaffold(body: MyHomePage()));
   }
 }
 
@@ -40,14 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
         body: _selectedIndex == 0
             ? beranda()
             : _selectedIndex == 1
-            ? materi()
-            : _selectedIndex == 2
-            ? Identifikasi()
-            : _selectedIndex == 3
-            ?  Video()
-            : _selectedIndex == 4
-            ? Test()
-            : const Text("data"),
+                ? materi()
+                : _selectedIndex == 2
+                    ? Identifikasi()
+                    : _selectedIndex == 3
+                        ? Video()
+                        : _selectedIndex == 4
+                            ? Test()
+                            : const Text("data"),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

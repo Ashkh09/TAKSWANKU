@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.taskwanku1">
    <application
-        android:label="taskwanku1"
+        android:label="taskwanku"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

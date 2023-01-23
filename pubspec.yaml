@@ -61,6 +61,18 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/splash_screen.png
+  color_dark: "#ffffff"
+  image_dark: assets/splash_screen.png
+
+  android_12:
+    icon_background_color: "#ffffff"
+    image: assets/splash_screen.png
+    icon_background_color_dark: "#ffffff"
+    image_dark: assets/splash_screen.png
+  web: false
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -70,9 +82,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-      - assets/cover.png
-      - assets/google.mp4
+    - assets/cover.png
+    - assets/google.mp4
+    - assets/splash_screen.png
   #   - images/a_dot_ham.jpeg
+  # flutter_native_splash-development.yaml
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
