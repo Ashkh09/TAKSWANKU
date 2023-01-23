@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:taskwanku1/main.dart';
 
 class Cover extends StatelessWidget {
+  const Cover({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Stack(children: [
+      home: Scaffold(
+        body: Stack(children: [
           const SizedBox(
-            height: double.maxFinite,
-            width: double.maxFinite,
+            // height: double.maxFinite,
+            // width: double.maxFinite,
             child: Image(
               image: AssetImage("assets/cover.png"),
               fit: BoxFit.fill,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskwanku1/splash_screen.dart';
+
 import './pages/Beranda.dart';
 import './pages/Identifikasi.dart';
 import './pages/Test.dart';
@@ -13,7 +14,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(body: MyHomePage()));
+    return MaterialApp(
+      home: MyHomePage(),
+    );
   }
 }
 
@@ -37,9 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: _selectedIndex == 0
-            ? beranda()
+            ? Beranda()
             : _selectedIndex == 1
-                ? materi()
+                ?Materi()
                 : _selectedIndex == 2
                     ? Identifikasi()
                     : _selectedIndex == 3
