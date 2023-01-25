@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
@@ -31,6 +30,7 @@ Widget wv_identifikasi(){
       NavigationDelegate(
         onProgress: (int progress) {
 // Update loading bar.
+          Center( child: CircularProgressIndicator(),);
         },
         onPageStarted: (String url) {},
         onPageFinished: (String url) {},

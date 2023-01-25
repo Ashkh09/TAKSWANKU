@@ -40,10 +40,8 @@ dependencies:
   video_player: ^2.4.10
   flutter_native_splash: ^2.2.17
   auto_size_text: 3.0.0
-  google_fonts: 3.0.1
-  flutter_vlc_player: ^7.2.0
-  floating_bottom_navigation_bar: ^1.5.2
   chewie: ^1.3.6
+
 
 
 dev_dependencies:
@@ -85,6 +83,11 @@ flutter:
     - assets/cover.png
     - assets/google.mp4
     - assets/splash_screen.png
+    - assets/Pengantar.png
+    - assets/Tatatertib.png
+    - assets/tentang.png
+    - assets/tujuan.png
+    - assets/materi.pdf
   #   - images/a_dot_ham.jpeg
   # flutter_native_splash-development.yaml
 

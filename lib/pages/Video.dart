@@ -21,11 +21,11 @@ class Video extends StatelessWidget {
                   color: Colors.blue,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
-                child: const Center(
+                child: Center(
                     child: Text(
-                  "Video",
-                  style: TextStyle(fontSize: 30, color: Colors.orange),
-                )),
+                      "Video",
+                      style: TextStyle(fontSize: 30, color: Colors.orange),
+                    )),
               ),
             ),
             Container(
@@ -34,8 +34,7 @@ class Video extends StatelessWidget {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 10,
-                    margin: EdgeInsets.all(10),
+                    height: MediaQuery.of(context).size.height / 12,
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
@@ -46,6 +45,7 @@ class Video extends StatelessWidget {
                           children: [
                             ListTile(
                               selected: false,
+                              leading: Icon(Icons.video_library_rounded, size: 30,color: Colors.orange,),
                               title: const Text(
                                 "Amphibi",
                                 style: TextStyle(fontSize: 20),
@@ -59,7 +59,7 @@ class Video extends StatelessWidget {
                                   );
                                 },
                                 icon: const Icon(Icons.play_arrow_rounded),
-                                iconSize: 50.0,
+                                iconSize: 40.0,
                               ),
                             ),
                           ],

@@ -17,6 +17,7 @@ Widget wv_Test() {
       NavigationDelegate(
         onProgress: (int progress) {
 // Update loading bar.
+          Center( child: CircularProgressIndicator(),);
         },
         onPageStarted: (String url) {},
         onPageFinished: (String url) {},

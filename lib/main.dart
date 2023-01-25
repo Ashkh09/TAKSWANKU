@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -39,10 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        // appBar: AppBar(backgroundColor: Colors.grey,),
         body: _selectedIndex == 0
             ? Beranda()
             : _selectedIndex == 1
-                ?Materi()
+                ? Materi()
                 : _selectedIndex == 2
                     ? Identifikasi()
                     : _selectedIndex == 3
